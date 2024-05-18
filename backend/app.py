@@ -61,7 +61,7 @@ def login():
 def signup():
     if request.is_json:
         req_data = request.get_json()
-        if req_data['email'] == "" or req_data['password'] == "" or req_data['name']:
+        if req_data['email'] == "" or req_data['password'] == "" or req_data['name'] == "":
             return {'login': 'fail', 'message': 'Please enter the necessary login data.'}
         user = User.query.filter_by(email=req_data['email']).first()
         if user:
