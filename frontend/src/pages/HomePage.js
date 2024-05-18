@@ -59,12 +59,14 @@ export default function HomePage() {
 
       if (response.status === 200) {
         const videoUrl = response.data.video_url;
-        const title = response.data.youtube_title; // Ideally fetch this dynamically or from the response if your backend provides it
+        const title = response.data.youtube_title;
+        const transcript = response.data.translated_transcript;
 
         setVideoDetails({
           videoUrl,
           title,
           language,
+          transcript,
           celebrityVoice: language === "English" ? celebrityVoice : "",
         });
       } else {

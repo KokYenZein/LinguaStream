@@ -117,7 +117,7 @@ export default function HomePageVideo({ videoDetails, handleReset }) {
               </Flex>
 
               <Textarea
-                value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse..."
+                value={videoDetails.transcript}
                 readOnly
                 height="100%"
                 resize={"none"}

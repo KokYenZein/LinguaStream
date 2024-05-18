@@ -30,21 +30,21 @@ def ensure_nltk_resources():
 
 preload_models()
 
-device = 'cpu'
-
-# From https://github.com/gitmylo/bark-voice-cloning-HuBERT-quantizer
-hubert_manager = HuBERTManager()
-hubert_manager.make_sure_hubert_installed()
-hubert_manager.make_sure_tokenizer_installed()
-
-# Load the HuBERT model
-hubert_model = CustomHubert(checkpoint_path='data/models/hubert/hubert.pt').to(device)
-
-# Load the CustomTokenizer model
-tokenizer = CustomTokenizer.load_from_checkpoint('data/models/hubert/tokenizer.pth').to(device)
-
 # Assuming bark and hubert models are correctly imported and initialized as per your description.
 def clone_voice(audio_filepath, output_name):
+    device = 'cpu'
+
+    # From https://github.com/gitmylo/bark-voice-cloning-HuBERT-quantizer
+    hubert_manager = HuBERTManager()
+    hubert_manager.make_sure_hubert_installed()
+    hubert_manager.make_sure_tokenizer_installed()
+
+    # Load the HuBERT model
+    hubert_model = CustomHubert(checkpoint_path='data/models/hubert/hubert.pt').to(device)
+
+    # Load the CustomTokenizer model
+    tokenizer = CustomTokenizer.load_from_checkpoint('data/models/hubert/tokenizer.pth').to(device)
+    
     model = load_codec_model(use_gpu=True if device == 'cuda' else False)
     
     # Load and pre-process the audio waveform
