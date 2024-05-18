@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 import youtube_translate as ytTranslate
-import modified_youtube as modifiedYt
+from modified_youtube import modify_youtube_video, upload_video_to_firebase
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -112,14 +112,14 @@ def translate_video():
 
         youtube_title = ytTranslate.produce_title(youtube_link)
 
-        # path_name = 'modify'
-        # file_name = youtube_title
-        # modifiedYt.modify_youtube_video(youtube_link, path_name, file_name, joined_transcript, langCode)
-        # video_path = f'{path_name}/{file_name}_ad.mp4'
-        # firebase_url = modifiedYt.upload_video_to_firebase(video_path, file_name)
-        # print(f'Uploaded video is available at: {firebase_url}')
-        # video_url = firebase_url
-        video_url = 'https://storage.googleapis.com/linguastream-trial.appspot.com/english_dijkstra'
+        path_name = 'modify'
+        file_name = youtube_title
+        modify_youtube_video(youtube_link, path_name, file_name, joined_transcript, langCode)
+        video_path = f'{path_name}/{file_name}_ad.mp4'
+        firebase_url = upload_video_to_firebase(video_path, file_name)
+        print(f'Uploaded video is available at: {firebase_url}')
+        video_url = firebase_url
+        # video_url = 'https://storage.googleapis.com/linguastream-trial.appspot.com/english_dijkstra'
 
         return jsonify({
             'youtube_link': youtube_link,
