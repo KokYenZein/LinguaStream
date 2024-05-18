@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 import youtube_translate as ytTranslate
-from modified_youtube import modify_youtube_video, upload_video_to_firebase
+#import modified_youtube as modifiedYt
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
@@ -61,7 +61,7 @@ def login():
 def signup():
     if request.is_json:
         req_data = request.get_json()
-        if req_data['email'] == "" or req_data['password'] == "" or req_data['name']:
+        if req_data['email'] == "" or req_data['password'] == "" or req_data['name'] == "":
             return {'login': 'fail', 'message': 'Please enter the necessary login data.'}
         user = User.query.filter_by(email=req_data['email']).first()
         if user:
