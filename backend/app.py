@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 import youtube_translate as ytTranslate
-import modified_youtube as modifiedYt
+#import modified_youtube as modifiedYt
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
