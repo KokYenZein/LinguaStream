@@ -4,15 +4,16 @@ import os
 from moviepy.editor import *
 import shutil
 from celebrity_voice import generate_longer_voices
-from youtube_translate import join_transcripts
+from youtube_translate import join_transcripts, clear_directory
 import firebase_admin
 from firebase_admin import credentials, storage
 
 def modify_youtube_video(video_url, path_name, file_name, script, voice_model):
     # Ensure the directory exists and is empty
-    if os.path.exists(path_name):
-        shutil.rmtree(path_name)
-    os.makedirs(path_name, exist_ok=True)
+    if not os.path.exists(path_name):
+        os.makedirs(path_name)
+    else:
+        clear_directory(path_name)
 
     # Download the video from YouTube
     yt = YouTube(video_url)
@@ -83,11 +84,11 @@ def upload_video_to_firebase(file_path, remote_file_name):
 # if __name__ == "__main__":
 #     video_url = "https://www.youtube.com/watch?v=_lHSawdgXpI"
 #     path_name = 'modify'
-#     file_name = "gordon_dijkstra"
-#     voice_model = "en"
+#     file_name = "chinese"
+#     voice_model = "zh-Hans"
 #     script = join_transcripts(video_url, voice_model)
 
-#     # modify_youtube_video(video_url, path_name, file_name, script, voice_model)
+#     modify_youtube_video(video_url, path_name, file_name, script, voice_model)
 #     # replace_audio(path_name)
 
 #     video_path = f'{path_name}/{file_name}_ad.mp4'
