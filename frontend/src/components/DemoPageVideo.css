@@ -1,149 +1,149 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
-.dpvHolder{
-    display: flex;
-    align-items: unset;
-    height: auto;
-    background-color: #1A4D2E;
-    font-family: "Outfit", sans-serif;
+.dpvHolder {
+  display: flex;
+  align-items: unset;
+  height: auto;
+  background-color: #1a4d2e;
+  font-family: "Outfit", sans-serif;
 }
 
-.vidNdTran{
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2em;
+.vidNdTran {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
 }
 
-
-.player-wrapper{
-    height: 60vh;
-    width: 50vw;
-    background-color: white;
-    border-radius: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.player-wrapper {
+  height: 60vh;
+  width: 50vw;
+  background-color: white;
+  border-radius: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.transcHolder{
-    color: black;
-    background-color: white;
-    width: 95%;
-    height: 40vh;
-    padding: 2em;
-    margin-inline-start: 1.5em;
-    border-radius: 1em;
-    overflow-y: scroll;
+.transcHolder {
+  color: black;
+  background-color: white;
+  width: 95%;
+  height: 40vh;
+  padding: 2em;
+  margin-inline-start: 1.5em;
+  border-radius: 1em;
+  overflow-y: scroll;
 }
 
-.transcOrDesc{
-    margin-bottom: 1em;
-    margin-inline-start: 2em;
-    width: 19.6em;
-    height: 4em;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    color: black;
-    border-radius: 0.5em;
-    gap: 0.7em
+.transcOrDesc {
+  margin-bottom: 1em;
+  margin-inline-start: 2em;
+  width: 19.6em;
+  height: 4em;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  color: black;
+  border-radius: 0.5em;
+  gap: 0.7em;
 }
 
-.transcShower{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2em;
+.transcShower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
 }
 
-.vdesBut, .transcBut{
-    width: 9em;
-    font-weight: 500;
-    height: 3.5em;
-    color: black;
-    margin-inline-start: 0.3em;
-
+.vdesBut,
+.transcBut {
+  width: 9em;
+  font-weight: 500;
+  height: 3.5em;
+  color: black;
+  margin-inline-start: 0.3em;
 }
 
-.clicked{
-    background-color: #1A4D2E;
-    border-radius: 0.4em;
-    font-weight: 700;
-    color: white;
+.clicked {
+  background-color: #1a4d2e;
+  border-radius: 0.4em;
+  font-weight: 700;
+  color: white;
 }
 
-.descpHolder{
-    color: black;
-    background-color: white;
-    height: 20vh;
-    padding: 2em;
-    margin-inline-start: 1.5em;
-    border-radius: 1em;
-    overflow-y: scroll;
+.descpHolder {
+  color: black;
+  background-color: white;
+  height: 20vh;
+  padding: 2em;
+  margin-inline-start: 1.5em;
+  border-radius: 1em;
+  overflow-y: scroll;
 }
 
-.chat{
-    margin-inline-start: 2em;
-    width: 35%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    left: 59vw;
+.chat {
+  margin-inline-start: 2em;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 59vw;
 }
 
-.chatterHolder{
-    height: 65vh;
-    width: 95%;
-    background-color: white;
-    border-radius: 1em;
+.chatterHolder {
+  height: 65vh;
+  width: 95%;
+  background-color: white;
+  border-radius: 1em;
 }
 
-.backBut{
-    width: 10em;
-    height: 3em;
-    background-color: #4f6f52;
-    font-size: 1.3em;
-    font-weight: 600;
-    margin-bottom: 1em;
-    border-radius: 0.7em;
-    display: flex;
-    gap: 2em;
-    align-items: center;
-    padding-inline-start: 1em;
-    padding-inline-end: 1em;
+.backBut {
+  width: 10em;
+  height: 3em;
+  background-color: #4f6f52;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 1em;
+  border-radius: 0.7em;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  padding-inline-start: 1em;
+  padding-inline-end: 1em;
 }
 
-.chatName{
-    height: 3.5em;
-    width: 100%;
-    background-color: #4f6f52;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    padding-inline-start: 2em;
+.chatName {
+  height: 3.5em;
+  width: 100%;
+  background-color: #4f6f52;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  padding-inline-start: 2em;
 }
 
-.textHolder{
-    margin: 1em;
-    height: 15.8em;
+.textHolder {
+  margin: 1em;
+  height: 70%;
+  overflow-y: scroll;
 }
 
-.textinputter{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+.textinputter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.textter{
-    width: 80%;
-    border: 2px solid #4f6f52;
-    outline: none;
+.textter {
+  width: 80%;
+  border: 2px solid #4f6f52;
+  outline: none;
 }

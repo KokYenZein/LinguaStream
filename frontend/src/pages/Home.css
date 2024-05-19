@@ -1,0 +1,18 @@
+.demoroot {
+  background-color: #1a4d2e;
+  color: white;
+  height: 100vh;
+}
+
+.error-holder {
+  height: 3em;
+  background-color: #feefad;
+  width: 30vw;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em;
+  font-weight: 500;
+}
