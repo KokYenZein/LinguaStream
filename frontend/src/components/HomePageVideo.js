@@ -12,27 +12,56 @@ import {
   Textarea,
   Input,
   IconButton,
-  Icon,
+  Icon
+  
 } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { TbMessageChatbot } from "react-icons/tb";
 import { CgTranscript } from "react-icons/cg";
 import { IoCaretBack } from "react-icons/io5";
+import axios from "axios";
 
 export default function HomePageVideo({ videoDetails, handleReset }) {
   const [chatMessages, setChatMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState("");
+  const [botResponse, setBotResponse] = useState("");
   const lastMessageRef = useRef(null);
+  const[loading, setLoading]=useState(false);
+  const[error, setError]=useState("");
 
-  const handleSendMessage = () => {
-    if (currentMessage.trim()) {
-      setChatMessages([
-        ...chatMessages,
-        { text: currentMessage, sender: "user" },
-      ]);
-      console.log(currentMessage);
-      setCurrentMessage("");
+  const handleSendMessage = async () => {
+    setLoading(true);
+    try{
+      if (currentMessage.trim()) {
+        setChatMessages(chatMessages => [
+          ...chatMessages,
+          { text: currentMessage, sender: "user" }
+        ]);
+        setCurrentMessage("");
+      }
+      //console.log(videoDetails.transcript);
+      const message = await axios.post("http://127.0.0.1:5000/chatbot",{
+          message: currentMessage,
+          transcript: videoDetails.transcript,
+      });
+      console.log("user message: ", message);
+      if (message.status === 200) {
+        const botResponse = message.data.response;
+        console.log("bot response: ", botResponse);
+        setChatMessages(chatMessages => [
+          ...chatMessages,
+          { text: botResponse, sender: "bot" }
+        ]);
+      }
+    }catch(error){
+      setError(
+        "An error occurred with the message."
+      );
+      console.error("Error with sending message: ", error);
+    } finally{
+      setLoading(false);
     }
+    
   };
 
   const handleKeyPress = (event) => {
@@ -67,14 +96,6 @@ export default function HomePageVideo({ videoDetails, handleReset }) {
       >
         <GridItem colSpan={7}>
           <VStack spacing={4} align="stretch">
-            <Image
-              src={videoDetails.thumbnail}
-              alt="Video Thumbnail"
-              boxSize="100%"
-              objectFit="cover"
-              borderRadius="lg"
-              mt={3}
-            />
             <Text fontSize="lg" color="black">
               Title: {videoDetails.title}
             </Text>
@@ -157,13 +178,17 @@ export default function HomePageVideo({ videoDetails, handleReset }) {
                     ref={
                       index === chatMessages.length - 1 ? lastMessageRef : null
                     }
+                    flexDirection={msg.sender === "user" ? "row" : "row-reverse"}
+                    w="full" 
                   >
                     <Box
-                      bg="teal.200"
+                      bg={msg.sender === "user" ? "teal.200" : "teal.500"}
                       p={2}
                       borderRadius="lg"
                       maxWidth="fit-content" // Adjusts width to content
-                      alignSelf="flex-end" // Ensures the bubble stays at the bottom right
+                      m={1}
+                      //alignSelf="flex-end" // Ensures the bubble stays at the bottom right
+                      alignSelf={msg.sender === "user" ? "flex-end" : "flex-start"}
                     >
                       <Text fontSize="sm" textAlign="left">
                         {msg.text}
