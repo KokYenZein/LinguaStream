@@ -61,11 +61,11 @@ def chatbot_response(translated_transcript, question):
 
     return responses.text
 
-if __name__ == '__main__':
-    video_url = "https://www.youtube.com/watch?v=Crqgl10aIGQ"
-    voice_model = "en"
-    joined_transcript = join_transcripts(video_url, voice_model)
+# if __name__ == '__main__':
+#     video_url = "https://www.youtube.com/watch?v=_lHSawdgXpI"
+#     voice_model = "zh-Hans"
+#     joined_transcript = join_transcripts(video_url, voice_model)
 
-    question = "What is a linked list?"
-    response = chatbot_response(joined_transcript, question)
-    print(response)
+#     question = "quel est l'algorithme de Dijkstra ?"
+#     response = chatbot_response(joined_transcript, question)
+#     print(response)
