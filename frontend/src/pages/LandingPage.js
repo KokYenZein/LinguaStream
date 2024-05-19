@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Button, Text } from "@chakra-ui/react";
 import "./LandingPage.css";
 import avl from "../assets/avltrees.png";
@@ -9,17 +9,13 @@ import git from "../assets/github.png";
 
 export default function LandingPage() {
   let navigate = useNavigate();
-
-  const handleGetStarted = () => {
-    navigate("/signup");
-  };
-
+  
   return (
     <div className="rooter">
       <header>
         <h1 className="lp-title">linguastream</h1>
         <div className="lp-header-navs">
-          <p>Demo</p><span>&#8901;</span>
+          <Link to="/demo"><p>Demo</p></Link><span>&#8901;</span>
           <a href="#founders"><p>Founders</p></a>
         </div>
         <div className="lp-header-buttons">
