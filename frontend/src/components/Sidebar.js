@@ -41,11 +41,7 @@ export default function Sidebar({ isOpen, onClose }) {
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton />
-        <DrawerHeader
-          sx={{ fontSize: "24px" }}
-          onClick={returnHome}
-          style={{ cursor: "pointer" }}
-        >
+        <DrawerHeader sx={{ fontSize: "24px" }} onClick={returnHome}>
           linguastream
         </DrawerHeader>
         <DrawerBody>

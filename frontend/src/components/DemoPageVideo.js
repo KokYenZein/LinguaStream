@@ -96,8 +96,12 @@ export default function DemoPageVideo({ lang, link, transc, notback }) {
               <p>Translation Language: {lang}</p>
               <p>
                 Youtube Video Link:{" "}
-                <a href="https://www.youtube.com/watch?v=_lHSawdgXpI">
-                  https://www.youtube.com/watch?v=_lHSawdgXpI
+                <a
+                  style={{ textDecoration: "underline" }}
+                  href="https://www.youtube.com/watch?v=_lHSawdgXpI"
+                  target="_blank"
+                >
+                  Dijkstra's algorithm
                 </a>
               </p>
             </div>

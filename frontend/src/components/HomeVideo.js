@@ -23,7 +23,7 @@ import "./HomeVideo.css";
 import arrow from "../assets/arrow.png";
 import send from "../assets/send.png";
 
-export default function HomeVideo({ videoDetails, handleReset }) {
+export default function HomeVideo({ videoDetails, handleReset, ytLink }) {
   const [chatMessages, setChatMessages] = useState([]);
   const [currentMessage, setCurrentMessage] = useState("");
   const [botResponse, setBotResponse] = useState("");
@@ -112,8 +112,12 @@ export default function HomeVideo({ videoDetails, handleReset }) {
               <p>Translation Language: {videoDetails.language}</p>
               <p>
                 Youtube Video Link:{" "}
-                <a href="https://www.youtube.com/watch?v=_lHSawdgXpI">
-                  https://www.youtube.com/watch?v=_lHSawdgXpI
+                <a
+                  style={{ textDecoration: "underline" }}
+                  href={ytLink}
+                  target="_blank"
+                >
+                  {videoDetails.title}
                 </a>
               </p>
             </div>

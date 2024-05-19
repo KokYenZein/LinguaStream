@@ -135,7 +135,11 @@ export default function HomePage() {
           </VStack>
         </Center>
       ) : videoDetails ? (
-        <HomeVideo videoDetails={videoDetails} handleReset={handleReset} />
+        <HomeVideo
+          ytLink={youtubeLink}
+          videoDetails={videoDetails}
+          handleReset={handleReset}
+        />
       ) : (
         <div
           style={{
