@@ -45,7 +45,7 @@ def chatbot_response(translated_transcript, question):
               Given the information: "{translated_transcript}", 
               I want you to generate a response to the question: "{question}".
               Maintain the language that the question is in.
-              Limit your response to two sentences.
+              Limit your response to two sentences or less.
               """)
     
     model = GenerativeModel("gemini-1.0-pro-vision")
