@@ -1,9 +1,9 @@
 /venv
 /__pycache__
-<<<<<<< HEAD
 /myenv
-=======
 /data
 /modify
 /hubert
->>>>>>> 5e9a680d9c26051496f462e8f828b2b39d1cd9c3
+.env
+linguastream-firebase-adminsdk-mi3df-3ba2abc5e2.json
+linguastream-trial-e03aa14ac5aa.json
