@@ -11,6 +11,7 @@ import vertexai
 from vertexai.preview.generative_models import GenerativeModel, GenerationConfig, HarmCategory, HarmBlockThreshold, Part
 from googleapiclient.discovery import build
 import re
+import shutil
 
 def extract_video_id(video_id_or_url):
     # a youtube video id is 11 characters long
