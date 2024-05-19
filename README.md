@@ -1,6 +1,8 @@
 # LinguaStream
 
-Inspiration
+![Preview](https://github.com/KokYenZein/LinguaStream/blob/main/compiled_image.png)
+
+## Inspiration
 
 Our objective, purpose, and inspiration for this project came from our desire to help and aid in people with accessibility needs - especially those who are visually impaired. We designed is to break down language barriers in digital content consumption by providing real-time translation. In fact, one of our team members who was struggling with learning to code is more fluent in Chinese; thus inspired us to ma​ke this project.
 
