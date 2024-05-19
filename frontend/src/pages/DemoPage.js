@@ -41,6 +41,7 @@ export default function DemoPage(){
                 setTransc("Aujourd'hui, je vais vous apprendre à exécuter l'algorithme de Dijkstra sur un graphe orienté pondéré. L'algorithme de Dijkstra vous indique la distance la plus courte entre un nœud et chaque autre nœud du graphe. Cela varie pour les prims et kruskal qui aboutissent à des arbres couvrant minimum. Utilisons le graphique suivant pour notre exemple. Nous conserverons une liste de nœuds non visités en bas. Notre première étape consiste à sélectionner un nœud de départ. Choisissons A. Nous utilisons un tableau de droite pour suivre les distances, en nous souvenant que nous mesurons les distances à partir de notre nœud de départ. Nous définissons 0 pour A et l'infini pour les autres parce que nous n'y sommes pas encore allés. La prochaine étape est d'inspecter les bords et de repartir de A. Nous pouvons accéder à B et C à partir de A, mettons donc à jour le graphe avec les coûts correspondants. Puis, regardons au graphe et on sélectionne la plus petite arête dont le sommet n'est pas sélectionné. Dans ce cas, c'est C. Coupons-le et voyons dans la liste des nœuds invisibles que vous marquez comme fermés après avoir sélectionné C. Nous examinons les bords qui quittent C et nous mettons à jour la classe en conséquence. L'arête B est désormais accessible depuis A au prix de trois en passant par C, alors que D et E deviennent accessibles pour la première fois. Faisons comme avant de choisir le plus petit chemin avec nœud non fermé. Cette fois-ci, c'est B. Nous répétons le processus d'examen des arêtes quittant B et de mise à jour du coût pour atteindre D et E. Maintenant, nous choisissons D. Cette fois, il n'y a pas de mises à jour sur notre table car il n'y a aucune arête quittant D. Finalement, on choisit E. Pas de mises à jour mais cette fois car l'arête qui quitte E n'entraîne pas un chemin plus court. Toutes les arêtes du graphe ont maintenant été visitées et fermées. Voici le chemin le plus court de A vers les autres nœuds. La complexité temporelle des performances de Dijkstra est Big O de E + V log V si un tas de Fibonacci est simplement utilisé. Ceci est le résultat de la création d'une file d'attente de valeurs de distance et d'itération sur les bords de chaque nœud. Voici le pseudo-code de l'algorithme de Dijkstra. Pour plus d'informations, veuillez visiter la source indiquée ci-dessous dans la description. Et c'est tout. J'espère que cette vidéo vous a permis de bien comprendre l'algorithme de Dijkstra.")
             }
         }
+        setShow(false);
     }
     return(
         <div className="demoroot">
@@ -81,6 +82,7 @@ export default function DemoPage(){
                 lang={lang}
                 transc={transc}
                 link={link}
+                notback={setVideoDetails}
               />
             ):(
             <DemoPageInputs
