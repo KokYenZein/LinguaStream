@@ -38,4 +38,4 @@ We learnt several things, one of which was using Axios to link frontend and back
 ​
 ## What's Next?
 
-We plan to diversify our target audience to more languages, accents, and dialects to be able to reach more people. Furthermore, we plan to deploy our project as a public web app, so it is accessible to people across the globe. In the future, we also plan to improve our text-to-speech system and make the audios & videos more in-sync.
+We plan to diversify our target audience to more languages, accents, and dialects to be able to reach more people. Furthermore, we plan to deploy our project as a public web app, so it is accessible to people across the globe. In the future, we also plan to improve our text-to-speech system and make the audios & videos more in-sync. Furthermore, we want to implement a history page so users can access previous videos.
